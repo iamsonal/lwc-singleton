@@ -3,10 +3,10 @@ import * as shared from "c/sharedData";
 
 export default class Component2 extends LightningElement {
   @track name;
-  labels;
+  LABELS;
 
   connectedCallback() {
-    this.labels = shared.getLabels();
+    this.LABELS = shared.getLabels();
   }
 
   handleClick() {
