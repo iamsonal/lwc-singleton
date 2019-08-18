@@ -1,5 +1,5 @@
 import { LightningElement, api } from "lwc";
-import * as design from "c/designData";
+import * as shared from "c/sharedData";
 
 export default class Component1 extends LightningElement {
   // Design Attributes
@@ -7,6 +7,6 @@ export default class Component1 extends LightningElement {
   @api lastName;
 
   connectedCallback() {
-    design.setDesignData(this.firstName, this.lastName);
+    shared.setDesignData(this.firstName, this.lastName);
   }
 }

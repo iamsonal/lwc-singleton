@@ -1,10 +1,11 @@
 <template>
   <lightning-button
-    label="Get Name"
+    label={labels.CLICK_HERE}
     onclick={handleClick}
   ></lightning-button>
 
   <div class="slds-m-around_medium">
-    Hello, {name}!
+    {labels.HELLO} {name}!
   </div>
+  
 </template>

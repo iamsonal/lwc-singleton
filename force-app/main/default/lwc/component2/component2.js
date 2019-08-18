@@ -1,15 +1,20 @@
 import { LightningElement, track } from "lwc";
-import * as design from "c/designData";
+import * as shared from "c/sharedData";
 
 export default class Component2 extends LightningElement {
   @track name;
+  labels;
 
-  handleClick() {
-    this.data = design.getDesignData();
-    this.fullName();
+  connectedCallback() {
+    this.labels = shared.getLabels();
   }
 
-  fullName() {
-    this.name = this.data ? this.data.firstName + " " + this.data.lastName : "";
+  handleClick() {
+    const designData = shared.getDesignData();
+    this.fullName(designData);
+  }
+
+  fullName(data) {
+    this.name = data ? data.firstName + " " + data.lastName : "";
   }
 }
